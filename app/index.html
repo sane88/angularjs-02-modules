@@ -12,10 +12,22 @@
 		<div class="page-header">
 			<h3>AngularJS App</h3>
 		</div>
-		<h4>Today is </h4>
+		<h4 ng-controller="Day as $ctrl" highlight="Tuesday">Today is {{$ctrl.day || "(unknown)" | dayNames}}</h4>
+    <h4 ng-controller="Tomorrow as $ctrl">Today is {{$ctrl.tomorrow || "(unknown)" | dayNames}}</h4>
 	</div>
 
 	<script src="vendor/angular/angular.min.js"></script>
+
+	<script src="feature/feature.module.js"></script>
+	<script src="feature/day.controller.js"></script>
+	<script src="common/common.module.js"></script>
+  <script src="common/filters/common-filters.module.js"></script>
+	<script src="common/services/common-services.module.js"></script>
+  <script src="feature/tomorrow.controller.js"></script>
+  <script src="feature/highlight.directive.js"></script>
+  <script src="common/filters/day-names.filter.js"></script>
+  <script src="feature/days.service.js"></script>
+	<script src="common/services/now-value.service.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
